@@ -8,6 +8,8 @@ body {
     margin: 0;
 }
 .header {
+    gap: 15px;
+    justify-content: space-between;
     margin-top: -15px;
     display: flex;
     flex-wrap: wrap;
@@ -16,27 +18,29 @@ body {
     height: 100px;
 }
 .logo {
-    flex-shrink: 0;
-    flex: 1;
+   /* flex-shrink: 0;
+    flex: 1;*/
     margin-bottom: 15px;
-
 }
 .library {
     display: flex;
     flex-wrap: wrap;
     border: 1.5px solid #2A6399;
     border-radius: 3px;
-    padding: 20px;
+    padding: 20px 20px 8px 20px;
     margin-bottom: 15px;
-    gap: 20px;
+    /*gap: 20px;*/
 }
 .libraryInfo {
     flex-shrink: 0;
     flex: 1;
     min-width:200px;
+    margin-bottom: 12px;
 }
 .libraryAction {
     flex-shrink: 5;
+    margin-bottom: 12px;
+
 }
 .repository {
     text-transform: uppercase;
@@ -51,7 +55,8 @@ body {
     font-size: 23px;
 }
 .nav {
-    flex-shrink: 5;
+    
+   /* flex-shrink: 5;*/
     margin-bottom: 40px;
 
 }
@@ -92,9 +97,7 @@ body {
 .navButton:hover {
   transform: scale(1.09);
 }
-.library:hover .navButton {
-    transform: scale(1.09);
-  }
+
 .navButton img {
     vertical-align: middle;
 }
