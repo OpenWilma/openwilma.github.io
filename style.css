@@ -195,17 +195,10 @@ display:block;
 }
 
 .langbutton-container {
-    display:flex;
-    align-items: flex-start;
-    flex-direction: row;
-    align-items: center;
     column-gap: 5px;
 }
 
 @media only screen and (max-width:755px) {
-    .langbutton-container {
-        align-items: center;
-    }
     .langbutton {
         font-size: 1rem;
     }
