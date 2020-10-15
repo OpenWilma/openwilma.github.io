@@ -1,1 +1,1 @@
-let enObject = document.getElementsByClassName("en");
+let langEn = document.getElementsByClassName("en");
