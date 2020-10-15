@@ -187,3 +187,10 @@ display:block;
 .langbutton:first-child {
     margin-left:15px;
 }
+
+.flag {
+display: inline;
+vertical-align: middle;
+padding:0;
+margin:0;
+}
