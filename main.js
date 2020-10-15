@@ -126,6 +126,18 @@ switch (lang) {
         langToEn();
         console.log("lang is set to UK English");
         break;
+    case "en":
+        langToEn();
+        console.log("lang is set to English");
+        break;
+    case "en-us":
+        langToEn();
+        console.log("lang is set to US English");
+        break;
+    case "en-gb":
+        langToEn();
+        console.log("lang is set to UK English");
+        break;
     case "fi":
         langToFi();
         console.log("lang is set to Finnish");
@@ -142,7 +154,15 @@ switch (lang) {
         langToSv();
         console.log("lang is set to Swedish");
         break;
+    case "sv-sv":
+        langToSv();
+        console.log("lang is set to Swedish");
+        break;
      case "sv-FI":
+        langToSv();
+        console.log("lang is set to Swedish");
+        break;
+    case "sv-SE":
         langToSv();
         console.log("lang is set to Swedish");
         break;
