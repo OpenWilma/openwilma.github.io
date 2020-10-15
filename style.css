@@ -104,8 +104,11 @@ body {
 .nav a, .libraryAction a {
     text-decoration: none;
 }
+
+/* Is this necessary?? */
 .headerContainer {
 }
+
 .headerContainer blockquote {
     font-family: 'Ubuntu', sans-serif;
     color: rgba(255,255,255,0.6);
