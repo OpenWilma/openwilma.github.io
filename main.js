@@ -1,0 +1,1 @@
+let enObject = document.getElementsByClassName("en");
