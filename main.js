@@ -48,7 +48,7 @@ function setLang(lang){ //Function to set the page language
             for(let i = 0; i < elementsToHide2.length; i++){
                 if(elementsToHide2[i].dataset.uuid == undefined){
                     let id = uuidv4()
-                    cachedStates[lang].push({id: id, state: elementsToHide2[i].style.display})
+                    cachedStates[toHide[i]].push({id: id, state: (elementsToHide2[i].style.display != "" ? elementsToHide2[i].style.display : "block")})
                     elementsToHide2[i].dataset.uuid = id
                 }
                 elementsToHide2[i].style.display = "none"
@@ -86,4 +86,3 @@ if(languages[browserLang] != undefined){
 }else { 
     setLang("en") //Default language
 }
-//-
