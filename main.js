@@ -1,177 +1,38 @@
-const lang = navigator.language; // Check the preferred language in the browser
-console.log(lang);
-
-const langEn = document.getElementsByClassName("en");// get all elements in the "en" class
-const langFi = document.getElementsByClassName("fi"); // get all elements in the "fi" class
-// future proofing const langSv = document.getElementsByClassName("sv"); //get all elements in the "sv" class
-//future proofing const langRu = document.getElementsByClassName("ru"); //get all elements in the "ru" class
-
-
-
-/* ENGLISH */
-
-// function for hiding English elements
-function hideEn() {
-    // loop through all the English elements and hide them
-    for (let i = 0; i < langEn.length; i++) {
-        langEn[i].style.display = "none";
+const browserLang = navigator.language; // Check the preferred language in the browser
+let languages = { //List of supported browser languages and the corresponding in-page language setting name
+    "en-US": "en",
+    "en-GB": "en",
+    "en": "en",
+    "en-us": "en",
+    "en-gb": "en",
+    "fi": "fi",
+    //Future proofing
+    //"sv": "sv",
+    //"sv-fi": "sv",
+    //"sv-se": "sv",
+    //"sv-sv": "sv",
+    //"sv-FI": "sv",
+    //"sv-SE": "sv",
+    //"sv-SV": "sv",
+    //"ru": "ru"
+}
+let selectedLang = null //Variable for the currently shown language name
+function setLanguage(lang){ //Function to set the page language
+    if(selectedLang != null){
+        let elementsToHide = document.getElementsByClassName(selectedLang)
+        for(let i = 0; i < elements.length; i++){
+            elementsToHide[i].style.display = "hidden"
+        }
     }
-}
-// function for showing English elements
-function showEn() {
-    // loop through all the English elements and show them
-    for (let i = 0; i < langEn.length; i++) {
-        langEn[i].style.display = "block";
+    let elementsToShow = document.getElementsByClassName(lang)
+    for(let i = 0; i < elements.length; i++){
+        elementsToShow[i].style.display = "visible"
     }
+    selectedLang = lang
 }
-
-
-/* FINNISH */
-
-// function for hiding Finnish elements
-function hideFi() {
-    for (let i = 0; i < langFi.length; i++) {
-        langFi[i].style.display = "none";
-    }
-}
-// function for showing Finnish elements
-function showFi() {
-    // loop through all the Finnish elements and show them
-    for (let i = 0; i < langFi.length; i++) {
-        langFi[i].style.display = "block";
-    }
-}
-
-
-/* SWEDISH */
-
-// function for hiding Swedish elements
-function hideSv() {
-    // loop through all the Swedish elements and hide them
-    for (let i = 0; i < langSv.length; i++) {
-        langSv[i].style.display = "none";
-    }
-}
-// function for showing Swedish elements
-function showSv() {
-    // loop through all the Swedish elements and show them
-    for (let i = 0; i < langSv.length; i++) {
-        langSv[i].style.display = "block";
-    }
-}
-
-
-/* RUSSIAN */
-
-// function for hiding all the Russian elements
-function hideRu() {
-    // loop through all the Russian elements and hide them
-    for (let i = 0; i < langRu.length; i++) {
-        langRu[i].style.display = "none";
-    }
-}
-//function for showing all the Russian elements
-function showRu() {
-    // loop through all the Russian elements and show them
-    for (let i = 0; i < langRu.length; i++) {
-        langRu[i].style.display = "block";
-    }
-}
-
-
-
-// Set the language to English
-function langToEn() {
-    hideFi();
-    //hideSv();
-    //hideRu();
-    showEn();
-}
-
-// Set the language to Finnish
-function langToFi() {
-    hideEn();
-    //hideSv();
-    //hideRu();
-    showFi();
-}
-
-/*
-// Set the language to Swedish
-function langToSv() {
-    hideEn();
-    hideFi();
-    hideRu();
-    showSv();
-}
-*/
-
-/*
-// Set the language to Russian
-function langToRu() {
-    hideEn();
-    hideFi();
-    hideSv();
-    showRu();
-}*/
-
-
-// Automatically set page language according to preferred browser language
-switch (lang) {
-    case "en-US":
-        langToEn();
-        console.log("lang is set to US English");
-        break;
-    case "en-GB":
-        langToEn();
-        console.log("lang is set to UK English");
-        break;
-    case "en":
-        langToEn();
-        console.log("lang is set to English");
-        break;
-    case "en-us":
-        langToEn();
-        console.log("lang is set to US English");
-        break;
-    case "en-gb":
-        langToEn();
-        console.log("lang is set to UK English");
-        break;
-    case "fi":
-        langToFi();
-        console.log("lang is set to Finnish");
-        break;
-    case "sv":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-     case "sv-fi":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-     case "sv-se":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-    case "sv-sv":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-     case "sv-FI":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-    case "sv-SE":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-    case "sv-SV":
-        langToSv();
-        console.log("lang is set to Swedish");
-        break;
-    case "ru":
-        langToRu();
-        console.log("lang is set to Russian");
-        break;
+//Automatically set the page language based on browser language
+if(languages[browserLang] != undefined){
+    selectedLang(languages[browserLang])
+}else { 
+    selectedLang("en") //Default language
 }
