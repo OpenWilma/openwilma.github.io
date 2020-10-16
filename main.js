@@ -17,7 +17,7 @@ let languages = { //List of supported browser languages and the corresponding in
     //"ru": "ru"
 }
 let selectedLang = null //Variable for the currently shown language name
-function setLanguage(lang){ //Function to set the page language
+function setLang(lang){ //Function to set the page language
     if(selectedLang != null){
         let elementsToHide = document.getElementsByClassName(selectedLang)
         for(let i = 0; i < elements.length; i++){
@@ -32,7 +32,7 @@ function setLanguage(lang){ //Function to set the page language
 }
 //Automatically set the page language based on browser language
 if(languages[browserLang] != undefined){
-    selectedLang(languages[browserLang])
+    setLang(languages[browserLang])
 }else { 
-    selectedLang("en") //Default language
+    setLang("en") //Default language
 }
