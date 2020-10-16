@@ -20,7 +20,7 @@ let selectedLang = null //Variable for the currently shown language name
 function setLang(lang){ //Function to set the page language
     if(selectedLang != null){
         let elementsToHide = document.getElementsByClassName(selectedLang)
-        for(let i = 0; i < elements.length; i++){
+        for(let i = 0; i < elementsToHide.length; i++){
             elementsToHide[i].style.display = "none"
         }
     }else {
@@ -33,13 +33,13 @@ function setLang(lang){ //Function to set the page language
         }
         for(let i = 0; i < toHide.length; i++){
             let elementsToHide2 = document.getElementsByClassName(toHide[i])
-            for(let i = 0; i < elements.length; i++){
+            for(let i = 0; i < elementsToHide2.length; i++){
                 elementsToHide2[i].style.display = "none"
             }
         }
     }
     let elementsToShow = document.getElementsByClassName(lang)
-    for(let i = 0; i < elements.length; i++){
+    for(let i = 0; i < elementsToShow.length; i++){
         elementsToShow[i].style.display = "visible"
     }
     selectedLang = lang
