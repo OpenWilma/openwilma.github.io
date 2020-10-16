@@ -44,7 +44,6 @@ function setLang(lang){ //Function to set the page language
             }
         }
         for(let i = 0; i < toHide.length; i++){
-            console.log
             let elementsToHide2 = document.getElementsByClassName(toHide[i])
             for(let i2 = 0; i2 < elementsToHide2.length; i2++){
                 if(elementsToHide2[i2].dataset.uuid == undefined){
