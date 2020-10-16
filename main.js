@@ -21,7 +21,7 @@ function setLanguage(lang){ //Function to set the page language
     if(selectedLang != null){
         let elementsToHide = document.getElementsByClassName(selectedLang)
         for(let i = 0; i < elements.length; i++){
-            elementsToHide[i].style.display = "hidden"
+            elementsToHide[i].style.display = "none"
         }
     }
     let elementsToShow = document.getElementsByClassName(lang)
