@@ -16,7 +16,6 @@ let languages = { //List of supported browser languages and the corresponding in
     //"sv-SV": "sv",
     //"ru": "ru"
 }
-//-
 let selectedLang = null //Variable for the currently shown language name
 let cachedStates = {}
 function uuidv4() {
@@ -45,14 +44,15 @@ function setLang(lang){ //Function to set the page language
             }
         }
         for(let i = 0; i < toHide.length; i++){
+            console.log
             let elementsToHide2 = document.getElementsByClassName(toHide[i])
-            for(let i = 0; i < elementsToHide2.length; i++){
-                if(elementsToHide2[i].dataset.uuid == undefined){
+            for(let i2 = 0; i2 < elementsToHide2.length; i2++){
+                if(elementsToHide2[i2].dataset.uuid == undefined){
                     let id = uuidv4()
-                    cachedStates[toHide[i]].push({id: id, state: (elementsToHide2[i].style.display != "" ? elementsToHide2[i].style.display : "block")})
-                    elementsToHide2[i].dataset.uuid = id
+                    cachedStates[toHide[i]].push({id: id, state: (elementsToHide2[i2].style.display != "" ? elementsToHide2[i2].style.display : "block")})
+                    elementsToHide2[i2].dataset.uuid = id
                 }
-                elementsToHide2[i].style.display = "none"
+                elementsToHide2[i2].style.display = "none"
             }
         }
     }
@@ -87,4 +87,3 @@ if(languages[browserLang] != undefined){
 }else { 
     setLang("en") //Default language
 }
-//-
