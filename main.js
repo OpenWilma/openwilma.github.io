@@ -86,3 +86,4 @@ if(languages[browserLang] != undefined){
 }else { 
     setLang("en") //Default language
 }
+//-
