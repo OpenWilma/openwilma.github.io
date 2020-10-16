@@ -23,6 +23,20 @@ function setLang(lang){ //Function to set the page language
         for(let i = 0; i < elements.length; i++){
             elementsToHide[i].style.display = "none"
         }
+    }else {
+        let ar = Object.keys(languages)
+        let toHide = []
+        for(let i = 0; i < ar.length; i++){
+            if(languages[ar[i]] != lang){
+                toHide.push(languages[ar[i]])
+            }
+        }
+        for(let i = 0; i < toHide.length; i++){
+            let elementsToHide2 = document.getElementsByClassName(toHide[i])
+            for(let i = 0; i < elements.length; i++){
+                elementsToHide2[i].style.display = "none"
+            }
+        }
     }
     let elementsToShow = document.getElementsByClassName(lang)
     for(let i = 0; i < elements.length; i++){
