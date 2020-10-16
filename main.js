@@ -16,6 +16,7 @@ let languages = { //List of supported browser languages and the corresponding in
     //"sv-SV": "sv",
     //"ru": "ru"
 }
+//-
 let selectedLang = null //Variable for the currently shown language name
 let cachedStates = {}
 function uuidv4() {
