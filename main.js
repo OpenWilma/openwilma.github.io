@@ -30,7 +30,7 @@ function setLang(lang){ //Function to set the page language
         for(let i = 0; i < elementsToHide.length; i++){
             if(elementsToHide[i].dataset.uuid == undefined){
                 let id = uuidv4()
-                cachedStates[lang].push({id: id, state: elementsToHide[i].style.display})
+                cachedStates[lang].push({id: id, state: (elementsToHide[i].style.display != "" ? elementsToHide[i].style.display : "block")})
                 elementsToHide[i].dataset.uuid = id
             }
             elementsToHide[i].style.display = "none"
