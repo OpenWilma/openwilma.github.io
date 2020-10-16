@@ -104,7 +104,8 @@ body {
 .nav a, .libraryAction a {
     text-decoration: none;
 }
-
+.headerContainer {
+}
 .headerContainer blockquote {
     font-family: 'Ubuntu', sans-serif;
     color: rgba(255,255,255,0.6);
@@ -150,56 +151,4 @@ body {
 a {
     text-decoration: none;
 
-}
-
-/* Language changing functionality stuff */
-
-.fi {
-display:none;
-}
-
-.en {
-display:block;
-}
-
-.langbutton {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    white-space: nowrap;
-    padding: 5px 10px;
-    border: 1.5px solid white;
-    vertical-align: middle;
-    border-radius: 3px;
-    transition: transform 0.15s ease;
-    cursor: pointer;
-    background-color: #2A6399;
-    border-radius: 6px;
-    margin-top:10px;
-    margin-bottom:-20px;
-}
-
-.langbutton:hover {
-    transform: scale(1.09);
-}
-
-.langbutton:first-child {
-    margin-left:15px;
-}
-
-.langbutton img {
-    vertical-align: middle;
-    padding:0;
-    margin:0;
-}
-
-.langbutton-container {
-    column-gap: 5px;
-}
-
-@media only screen and (max-width:755px) {
-    .langbutton {
-        font-size: 1rem;
-    }
 }
