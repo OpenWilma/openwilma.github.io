@@ -17,10 +17,23 @@ let languages = { //List of supported browser languages and the corresponding in
     //"ru": "ru"
 }
 let selectedLang = null //Variable for the currently shown language name
+let cachedStates = {}
+let cachedElements = {}
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+}
 function setLang(lang){ //Function to set the page language
     if(selectedLang != null){
         let elementsToHide = document.getElementsByClassName(selectedLang)
         for(let i = 0; i < elementsToHide.length; i++){
+            if(elementsToHide[i].dataset.uuid == undefined){
+                let id = uuidv4()
+                cachedStates[lang].push({id: id, state: elementsToHide[i].style.display})
+                elementsToHide[i].dataset.uuid = id
+            }
             elementsToHide[i].style.display = "none"
         }
     }else {
@@ -34,13 +47,32 @@ function setLang(lang){ //Function to set the page language
         for(let i = 0; i < toHide.length; i++){
             let elementsToHide2 = document.getElementsByClassName(toHide[i])
             for(let i = 0; i < elementsToHide2.length; i++){
+                if(elementsToHide2[i].dataset.uuid == undefined){
+                    let id = uuidv4()
+                    cachedStates[lang].push({id: id, state: elementsToHide2[i].style.display})
+                    elementsToHide2[i].dataset.uuid = id
+                }
                 elementsToHide2[i].style.display = "none"
             }
         }
     }
     let elementsToShow = document.getElementsByClassName(lang)
     for(let i = 0; i < elementsToShow.length; i++){
-        elementsToShow[i].style.display = "visible"
+        if(elementsToShow[i].dataset.uuid != undefined){
+            let state = null
+            for(let a = 0; a < cachedStates[lang].length; a++){
+                if(cachedStates[lang][i].id == elementsToShow[i].dataset.uuid){
+                    state = cachedStates[lang][i].state
+                    break
+                }
+            }
+            if(state != null){
+                //Valid state
+                elementsToShow[i].style.display = state
+            }
+        }else {
+            elementsToShow[i].style.display = "block" //Default
+        }
     }
     selectedLang = lang
 }
