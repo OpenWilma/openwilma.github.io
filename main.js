@@ -1,4 +1,4 @@
-const browserLang = navigator.language; // Check the preferred language in the browser
+let browserLang = navigator.language; // Check the preferred language in the browser
 if (browserLang.includes('-')) browserLang = browserLang.split('-')[0];   
 let languages = { //List of supported browser languages and the corresponding in-page language setting name, first part of the navigator.language string
     "en": "en",
