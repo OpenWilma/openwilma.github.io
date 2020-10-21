@@ -1,20 +1,11 @@
 const browserLang = navigator.language; // Check the preferred language in the browser
-let languages = { //List of supported browser languages and the corresponding in-page language setting name
-    "en-US": "en",
-    "en-GB": "en",
+if (browserLang.includes('-')) browserLang = browserLang.split('-')[0];   
+let languages = { //List of supported browser languages and the corresponding in-page language setting name, first part of the navigator.language string
     "en": "en",
-    "en-us": "en",
-    "en-gb": "en",
     "fi": "fi",
     "ru": "ru"
     //Future proofing
     //"sv": "sv",
-    //"sv-fi": "sv",
-    //"sv-se": "sv",
-    //"sv-sv": "sv",
-    //"sv-FI": "sv",
-    //"sv-SE": "sv",
-    //"sv-SV": "sv",
 }
 let selectedLang = null //Variable for the currently shown language name
 let cachedStates = {}
