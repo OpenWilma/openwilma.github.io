@@ -6,6 +6,7 @@ let languages = { //List of supported browser languages and the corresponding in
     "en-us": "en",
     "en-gb": "en",
     "fi": "fi",
+    "ru": "ru"
     //Future proofing
     //"sv": "sv",
     //"sv-fi": "sv",
@@ -14,7 +15,6 @@ let languages = { //List of supported browser languages and the corresponding in
     //"sv-FI": "sv",
     //"sv-SE": "sv",
     //"sv-SV": "sv",
-    //"ru": "ru"
 }
 let selectedLang = null //Variable for the currently shown language name
 let cachedStates = {}
@@ -86,3 +86,4 @@ if(languages[browserLang] != undefined){
 }else { 
     setLang("en") //Default language
 }
+//-
